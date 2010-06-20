@@ -1,0 +1,31 @@
+#prefix pc: <http://purl.org/ontology/playcount/>
+#prefix dc: <http://purl.org/dc/elements/1.1/>
+#prefix sioc: <http:// rdfs.org/sioc/ns#>
+#prefix rev: <http://purl.org/stuff/rev#>
+url: http://www.youtube.com/watch?v=
+require_id: Yes
+javascript: Yes
+dataitems:
+  - predicate: dc:title
+    xpath: id('watch-headline-title')/span
+  - predicate: dc:description
+    xpath: id('watch-description-body')/span[3]
+  - predicate: foaf:account
+    xpath: id('watch-username')/strong
+  - predicate: pc:playcount
+    xpath: id('watch-views')/div[2]/strong
+databags:
+  - predicate: sioc:has_container
+    databag_class: sioc:Thread
+    subpredicate: sioc:container_of
+    datarow_class: sioc:Post
+    xpath: id('comments-view')//h4[contains(.,'All Comments')]/../ul
+    p-list: ['', '', '', 'dc:creator', '', 'dcterms:created', '', 'sioc:content', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+    row_separator: li
+  - predicate: sim:similar_to
+    xpath: //*[@id="watch-related"]
+    p-list: ['', '', '', '', '', 'timeline:duration', '', '', '', '', '', '', '', '', 'dc:title', 'pc:playcount', 'dc:creator', '', '', '', '', 'subject']
+    include_href: Yes
+    row_separator: li
+    skip_end_rows: 2
+

@@ -1,0 +1,19 @@
+url: http://digg.com/
+require_id: Yes
+dataitems:
+  - predicate: dc:title
+    xpath: id('title')/a
+  - predicate: dc:creator
+    xpath: //a[@rel='dc:creator']
+  - predicate: foaf:primaryTopic
+    xpath: id('title')/a[@href]/@href
+databags:
+  - predicate: sioc:has_container
+    xpath: //*[@id="p-main"]
+    databag_class: sioc:Thread
+    subpredicate: sioc:container_of
+    datarow_class: sioc:Post
+    p-list: ['dc:creator', 'dc:created', 'sioc:content', 'rev:rating']
+    skip_end_rows: 2
+    row_separator: li
+

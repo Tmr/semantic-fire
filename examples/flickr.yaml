@@ -1,0 +1,31 @@
+#photos/ucumari/2570608134/
+url: http://www.flickr.com/
+require_id: Yes
+javascript: Yes
+dataitems:
+  - predicate: dc:title
+    xpath: //*[@id="photoswftd"]/h1
+  - predicate: dc:creator
+    xpath: id('Photo')/tbody/tr/td[2]/div[3]/a[3]/b
+  - predicate: cc:license
+    xpath: //span[contains(concat(' ',normalize-space(@class),' '),'license')]
+  - predicate: dcterms:created
+    xpath: id('Photo')/tbody/tr/td[2]/ul[2]/li[3]/a
+databags:
+  - predicate: tags:tag
+    xpath: id('thetags')
+    row_separator: div
+    p-xpaths:
+      - predicate: tags:taggedWithTag
+        xpath: a[2]/@href
+  - predicate: sioc:has_container
+    xpath: id('DiscussPhoto')/div[not(@*)]
+    row_separator: div
+    subject: div[2]/p/small/a/@href
+    p-xpaths:
+      - predicate: dc:creator
+        xpath: div[2]/h4/a[1] 
+      - predicate: sioc:content
+        xpath: div[2]/p/node()[position() < last()]
+      - predicate: dcterms:created
+        xpath: div[2]/p/*[last()]

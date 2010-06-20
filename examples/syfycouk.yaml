@@ -1,0 +1,50 @@
+#prefix po: <http://purl.org/ontology/po/>
+---
+url: http://www.syfy.co.uk/schedule
+javascript: Yes
+dataitems:
+  - predicate: po:schedule_date
+    xpath: id('content')/div/div[2]/div[3]/h2
+databags:
+  - predicate: None
+    datarow_class: po:Version
+    xpath: id('content')/div/div[2]/div[3]/div/div/table[1]/tbody
+    p-list: ['', 'event:time', '', '', 'dc:title', '', '', 'description', '', '', '', '', '', '', '']
+    parser_type: 1
+    start_row: 1
+    row_separator: tr
+    skip_end_rows: 0
+    external_data:
+      'po:broadcast_on': <http://www.syfy.co.uk/>
+  - predicate: None
+    datarow_class: po:Version
+    xpath: id('content')/div/div[2]/div[3]/div/div/table[2]/tbody
+    p-list: ['', 'event:time', '', '', 'dc:title', '', '', 'description', '', '', '', '', '', '', '']
+    parser_type: 1
+    start_row: 1
+    row_separator: tr
+    skip_end_rows: 0
+    external_data:
+      'po:broadcast_on': <http://www.syfy.co.uk/>
+  - predicate: None
+    datarow_class: po:Version
+    xpath: id('content')/div/div[2]/div[3]/div/div/table[3]/tbody
+    p-list: ['', 'event:time', '', '', 'dc:title', '', '', 'description', '', '', '', '', '', '', '']
+    parser_type: 1
+    start_row: 1
+    row_separator: tr
+    skip_end_rows: 0
+    external_data:
+      'po:broadcast_on': <http://www.syfy.co.uk/>
+  - predicate: None
+    datarow_class: po:Version
+    xpath: id('content')/div/div[2]/div[3]/div/div/table[4]/tbody
+    p-list: ['', 'event:time', '', '', 'dc:title', '', '', 'description', '', '', '', '', '', '', '']
+    parser_type: 1
+    start_row: 1
+    row_separator: tr
+    skip_end_rows: 0
+    external_data:
+      'po:broadcast_on': <http://www.syfy.co.uk/>
+...
+
